@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+	<meta charset="UTF-8" />
+	<title>名侦探柯南剧场版介绍</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">        
+</head>
+<body onselectstart="return false;">
+<div class="konan" id="konan">
+<!--改写为模板字符串-->
+<div class="wrap_photo" id="wrap_photo">
+    <!--photo负责平移和旋转 添加翻转事件-->
+    <!--{}是随便定义的，{{ }}还是{ }，都一样；但是不能是<img>因为有可能会和内容冲突就。定义一个特殊格式的字符串是用于后续进行字符串替换。-->
+	<div class="photo photo_front" onclick="turn(this)" id="photo_{index}">  
+	<!--photo-wrap负责翻转-->
+	    <div class="photo-wrap">   
+		    <div class="side side-front">
+			    <p class="image"><img src="{image}" /></p>
+			    <p class="caption">{caption}</p>
+		    </div>
+		    <div class="side side-back">
+			    <p class="desc">{desc}</p>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<div class="time">
+    <div class="header">
+        <img src="images/ke2.png" width="170" height="170" style="position:absolute;bottom:0px;">
+        <span>名侦探柯南剧场版时间轴</span>
+        <img src="images/ke.png" width="150" height="150" style="position:absolute;right:10px;">
+    </div>
+    <div class="container">
+        <div class="scrubber" id="scrubber">
+            <a href="javascript:;" class="scrubber_year current" onclick="show(0)">1997</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(1)">1999</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(2)">2000</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(3)">2001</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(4)">2002</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(5)">2003</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(6)">2006</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(7)">2009</a>
+            <a href="javascript:;" class="scrubber_year" onclick="show(8)">2016</a>
+        </div>
+        <div id="wrap" class="wrap">
+        <div class="content" id="content_{index}">
+            <div class="content_year">{year}</div>
+            <div class="content_month">{month}月</div>
+            <div class="content_item">
+                <div class="content_item_icon_arrow"></div>
+                <div class="content_item_icon_dot">
+                    <div class="content_item_icon_dot_child"></div>
+                </div>
+                <div class="content_item_head">
+                    <div class="content_item_head_title">
+                        <div class="content_item_head_title_image"></div>
+                        {date}
+                    </div>
+                    <div class="content_item_head_intro">
+                        {intro}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+<div class="header">
+    <img src="images/ke3.png" width="150" height="150" style="position:absolute;">
+    <span>名侦探柯南人物介绍</span>
+    <img src="images/ke4.png" width="150" height="150" style="position:absolute;right:0px;">
+</div>
+<div class="pubu">
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/柯南.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/工藤有希子.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/兰.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/安室透.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/赤井秀一.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/目暮十三.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/怪盗基德.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/步美.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/基安蒂.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/远山和叶.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/毛利小五郎.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/妃英理.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/佐藤美和子.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/博士.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/服部平次.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/灰原哀.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/贝尔摩德.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <div class="mask">
+                    <img src="images/铃木园子.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/photo_data.js"></script>
+<script type="text/javascript" src="js/time_data.js"></script>
+<script type="text/javascript" src="js/modal_data.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<!--
+<script type="text/javascript" src="js/underscore.js"></script> -->
+
+<!--定义模板-->
+<!--<script type="text/template" id="tpl">  
+    <% for(var i=0; i<list.length; i++) { %>
+        <% var item=list[i] %>
+        <div class="content" id="content_{index}">
+            <div class="content_year"><%=item.year%></div>
+            <div class="content_month"><%=item.month%>月</div>
+            <div class="content_item">
+                <div class="content_item_icon_arrow"></div>
+                <div class="content_item_icon_dot">
+                    <div class="content_item_icon_dot_child"></div>
+                </div>
+                <div class="content_item_head">
+                    <div class="content_item_head_title">
+                        <div class="content_item_head_title_image"></div>
+                        <%=item.date%>
+                    </div>
+                    <div class="content_item_head_intro">
+                        <%=item.intro%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+</script>-->
+
+</body>
+</html>
